@@ -1,8 +1,6 @@
 # WPF TodoList Manager
 
-WPF TodoList Manager is a simple and intuitive to-do list manager built with WPF and C# using the MVVM design pattern.
-
-
+A simple to-do list manager built with WPF and C# using the MVVM design pattern.
 
 ## Features
 - **ToDoList Hierarchy:** Organize your tasks into a hierarchy with MoveUp, MoveDown, Add-Root, Add-Sub, Edit and Delete operations.
