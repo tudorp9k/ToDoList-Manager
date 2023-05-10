@@ -1,0 +1,49 @@
+﻿<Window x:Class="ToDoList.Views.UpdateTaskView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoList.Models"
+        mc:Ignorable="d"
+        Title="Input Task" ResizeMode="NoResize" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
+    <Grid Margin="15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Image Source="/Resources/tips.png" Width="32" Height="32" Grid.RowSpan="2" Margin="20,0" />
+
+        <Label Grid.Column="1">Please enter the Task name:</Label>
+        <TextBox Name="txtBoxName" Text="{Binding Name}"  Grid.Column="1" Grid.Row="1" MinWidth="250"></TextBox>
+
+        <Label Grid.Column="1" Grid.Row="2">Please enter the Description:</Label>
+        <TextBox Name="txtBoxDescription" Text="{Binding Description}"  Grid.Column="1" Grid.Row="3" MinHeight="30" MinWidth="250"></TextBox>
+        
+        <Label Grid.Column="1" Grid.Row="4">Please choose a priority:</Label>
+        <ComboBox Name="comboBoxPriority" Grid.Column="1" Grid.Row="5" ItemsSource="{Binding TaskPriorities}" SelectedItem="{Binding TaskPriority}" VerticalAlignment="Center" ></ComboBox>
+
+        <Label Grid.Column="1" Grid.Row="6">Please choose a category:</Label>
+        <ComboBox Name="comboBoxCategory" Grid.Column="1" Grid.Row="7" ItemsSource="{Binding TaskCategories}" SelectedItem="{Binding TaskCategory}" VerticalAlignment="Center" ></ComboBox>
+
+        <Label Grid.Column="1" Grid.Row="8">Please choose a due date:</Label>
+        <DatePicker Name="datePickerDueDate" Grid.Column="1" Grid.Row="9" SelectedDate="{Binding DueDate}" VerticalAlignment="Center" ></DatePicker>
+        
+        <WrapPanel Grid.Row="10" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0,15,0,0">
+            <Button IsDefault="True" Name="btnDialogOk" MinWidth="60" Command="{Binding OkCommand}" Margin="0,0,10,0">_Ok</Button>
+        </WrapPanel>
+    </Grid>
+</Window>

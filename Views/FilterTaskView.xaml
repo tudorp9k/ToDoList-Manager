@@ -1,0 +1,78 @@
+﻿<Window x:Class="ToDoList.Views.FilterTaskView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ToDoList.Views"
+      mc:Ignorable="d" 
+      Title="Filter Tasks" ResizeMode="NoResize" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Image Source="/Resources/tips.png" Width="32" Height="32" Grid.RowSpan="2" Margin="15" />
+
+        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+            <Label VerticalAlignment="Center"  >Filter by tasks done:</Label>
+            <Button Content="✔" Command="{Binding DoneCommand}" VerticalAlignment="Center" MinHeight="20" MinWidth="20" />
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal">
+            <Label >Filter by tasks available but not done:</Label>
+            <Button Content="✔" Command="{Binding AvailableNotDoneCommand}" VerticalAlignment="Center" MinHeight="20" MinWidth="20" />
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
+            <Label >Filter by tasks not available and not done:</Label>
+            <Button Content="✔" Command="{Binding NotAvailableNotDoneCommand}" VerticalAlignment="Center" MinHeight="20" MinWidth="20" />
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal">
+            <Label >Filter by tasks overdue:</Label>
+            <Button Content="✔" Command="{Binding OverdueCommand}" VerticalAlignment="Center" MinHeight="20" MinWidth="20" />
+        </StackPanel>
+
+
+        <Label Grid.Column="1" Grid.Row="5">Filter by category:</Label>
+        <ComboBox Name="comboBoxCategory" Grid.Column="1" Grid.Row="5" ItemsSource="{Binding TaskCategories}" SelectedItem="{Binding TaskCategory}" VerticalAlignment="Center" Margin="0,30,20,10" />
+
+        <ListBox Grid.Column="1" Grid.Row="6" x:Name="listBox" ItemsSource="{Binding ItemsCollection}" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="200" Width="600" Background="WhiteSmoke" Margin="0,10,20,20" >
+            <ListBox.Resources>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListBox.Resources>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Horizontal" >
+                            <Image Grid.Column="0" Source="/Resources/task.png" Width="20" Height="20" Margin="0,0,10,0"/>
+                            <TextBlock Grid.Column="0" Text="{Binding Title}"/>
+                        </StackPanel>
+                        <TextBlock Grid.Column="1" Text="{Binding Priority}"/>
+                        <TextBlock Grid.Column="2" Text="{Binding Category}" Margin="10,0,0,0"/>
+                        <TextBlock Grid.Column="3" Text="{Binding DueDate, StringFormat='{}{0:d}'}" Margin="10,0,0,0" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\books.png" />
+    <None Remove="Resources\code.png" />
+    <None Remove="Resources\computer.png" />
+    <None Remove="Resources\contacts.png" />
+    <None Remove="Resources\design.png" />
+    <None Remove="Resources\discord.png" />
+    <None Remove="Resources\folder.png" />
+    <None Remove="Resources\home.png" />
+    <None Remove="Resources\language.png" />
+    <None Remove="Resources\pencil.png" />
+    <None Remove="Resources\pencil1.png" />
+    <None Remove="Resources\personal.png" />
+    <None Remove="Resources\search.png" />
+    <None Remove="Resources\task.png" />
+    <None Remove="Resources\tips.png" />
+    <None Remove="Resources\work.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\books.png" />
+    <Resource Include="Resources\code.png" />
+    <Resource Include="Resources\computer.png" />
+    <Resource Include="Resources\contacts.png" />
+    <Resource Include="Resources\design.png" />
+    <Resource Include="Resources\discord.png" />
+    <Resource Include="Resources\folder.png" />
+    <Resource Include="Resources\home.png" />
+    <Resource Include="Resources\language.png" />
+    <Resource Include="Resources\pencil.png" />
+    <Resource Include="Resources\pencil1.png" />
+    <Resource Include="Resources\personal.png" />
+    <Resource Include="Resources\search.png" />
+    <Resource Include="Resources\task.png" />
+    <Resource Include="Resources\tips.png" />
+    <Resource Include="Resources\work.png" />
+  </ItemGroup>
+
+</Project>
