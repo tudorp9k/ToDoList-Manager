@@ -9,3 +9,7 @@ WPF TodoList Manager is a simple and intuitive to-do list manager built with WPF
 - **Filtering:** Filter tasks by completion status or category.
 - **Sorting:** Sort tasks by due date or priority.
 - **Task Statistics:** View task statistics for tasks due today, tomorrow, not done or overdue.
+
+A preview of the UI:
+
+![3bb6ed92a5b7c270ccdc35bd01325a72](https://github.com/tudorp9k/ToDoList-Manager/assets/115632315/47f2f04a-263b-4759-9b21-8fe5099028c1)
